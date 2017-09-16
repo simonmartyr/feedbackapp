@@ -15,6 +15,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Base\BaseWebService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Implementation\FeedbackAPI.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Resources\Constants.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)MainPage.xaml">
@@ -25,5 +28,8 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Services\Base\" />
   </ItemGroup>
 </Project>
