@@ -18,6 +18,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)Services\Base\BaseWebService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\Implementation\FeedbackAPI.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\Resources\Constants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\SprinterConfigs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Issues.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AddConfig.xaml.cs">
+      <DependentUpon>AddConfig.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)MainPage.xaml">
@@ -28,8 +33,12 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)AddConfig.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Services\Base\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Models\" />
   </ItemGroup>
 </Project>
