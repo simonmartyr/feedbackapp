@@ -2,16 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Feedback"
+    Title="{Binding Title}"
              x:Class="Feedback.MainPage">
     <ContentPage.Content >
-    <StackLayout Padding="0,20,0,5">
-	<ListView x:Name="configs" ItemsSource="{}">
-           <ListView.Header>
-    <StackLayout Padding="10,5,0,5" >
-        <Label Text="Sprinter Projects" />        
-                    
-    </StackLayout>
-  </ListView.Header>
+    <StackLayout>
+	<ListView x:Name="configs" ItemsSource="{Binding ConfigsList}">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
@@ -20,7 +15,8 @@
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
-    <Button Text="Add" />
+    <Button Text="Add" 
+            Command="{Binding ButtonCommand}"/>
     </StackLayout>
     </ContentPage.Content>
 </ContentPage>

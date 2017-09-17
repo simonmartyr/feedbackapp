@@ -15,10 +15,15 @@ namespace Feedback
 		public MainPage()
 		{
 			InitializeComponent();
+      MainPageViewModel vm = new MainPageViewModel();
+      vm.Navigation = Navigation; 
+      BindingContext = vm;
+
 		}
 
     protected async override void OnAppearing()
     {
+      /*
       FeedbackAPI Feedback = new FeedbackAPI();
       SprinterConfigs conf = new SprinterConfigs();
       IList < SprinterConfigs > configs = new List<SprinterConfigs>();
@@ -26,6 +31,7 @@ namespace Feedback
       await Feedback.RequestFeedback(configs);
 
       base.OnAppearing();
+      */
     }
   }
 }

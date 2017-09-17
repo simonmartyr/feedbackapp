@@ -13,7 +13,7 @@ namespace Feedback
     {
       InitializeComponent();
 
-      MainPage = new Feedback.MainPage();
+      MainPage = new NavigationPage(new Feedback.MainPage());
     }
 
     protected override void OnStart()
