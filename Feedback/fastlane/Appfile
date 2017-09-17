@@ -1,0 +1,8 @@
+package_name "com.finaps.feedback"
+
+app_identifier "com.finaps.feedback"
+itunes_connect_id "infra@finaps.nl"
+team_name "Finaps BV"
+ENV['PRODUCE_LANGUAGE'] = "English"
+ENV['PRODUCE_COMPANY_NAME'] = "Finaps BV"
+

@@ -10,6 +10,9 @@ namespace Feedback
     public AddConfig()
     {
       InitializeComponent();
+      AddConfigViewModel vm = new AddConfigViewModel();
+      vm.Navigation = Navigation;
+      BindingContext = vm;
     }
   }
 }

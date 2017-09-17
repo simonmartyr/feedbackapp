@@ -1,29 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Feedback.AddConfig">
-	<ContentPage.Content>
-        <StackLayout Padding="0,20,0,0">
-            <Label HorizontalTextAlignment="Center" Text="New Config"/>
-        <Grid>
-  <Grid.RowDefinitions>
-    <RowDefinition Height="*" />
-    <RowDefinition Height="*" />
-    <RowDefinition Height="*" />
-    <RowDefinition Height="*" />
-  </Grid.RowDefinitions>
-  <Grid.ColumnDefinitions>
-    <ColumnDefinition Width="*" />
-    <ColumnDefinition Width="*" />
-  </Grid.ColumnDefinitions>
-  <Label Text="App Name" Grid.Row="0" Grid.Column="0" />
-  <Entry Grid.Row="0" Grid.Column="1" />
-  <Label Text="Api Key" Grid.Row="1" Grid.Column="0" />
-  <Entry Grid.Row="1" Grid.Column="1" />
-  <Label Text="App ID" Grid.Row="2" Grid.Column="0" />
-  <Entry Grid.Row="2" Grid.Column="1" />
-</Grid>
-            
-            <Button Text="save"/>
-
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="StartAndExpand">
+            <Label HorizontalTextAlignment="Center" Text="New Config" />
+            <Label Text="App Name" />
+            <Entry Text="{Binding AppName}"/>
+            <Label Text="Api Key" />
+            <Entry Text="{Binding ApiKey}"/>
+            <Label Text="App ID" />
+            <Entry Text="{Binding AppID}"/>
+            <Button Text="Save" Command="{Binding SaveButton}" />
         </StackLayout>
-	</ContentPage.Content>
+    </ContentPage.Content>
 </ContentPage>

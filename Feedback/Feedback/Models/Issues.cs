@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Xml.Serialization;
 using Realms;
 namespace Feedback.Models
 {
+  [XmlRoot(ElementName = "Issues")]
   public class Issues : RealmObject
   {
     [PrimaryKey]
@@ -12,8 +14,9 @@ namespace Feedback.Models
     public string UserName { get; set; }
     public string UserEmail { get; set; }
     public string UserRoles { get; set; }
-    public string Browser { get; set; } 
-    //public DateTime TimeStamp { get; set; }
+    public string Browser { get; set; }
+    //[XmlElement("Timestamp")]
+    //public DateTimeOffset TimeStamp { get; set; }
     public string Form { get; set; }
     public string FormGuide { get; set; }
     public string Url { get; set; }

@@ -1,0 +1,6 @@
+git_url "git@gitlab.finaps.nl:xamarin/chat-app-cert.git"
+
+type "development"
+
+app_identifier ["com.finaps.feedback"]
+

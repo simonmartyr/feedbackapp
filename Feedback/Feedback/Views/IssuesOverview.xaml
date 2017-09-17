@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Feedback.IssuesOverview" Title="{Binding Name}">
+	<ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="issues" ItemsSource="{Binding IssuesList}" IsPullToRefreshEnabled="true" RefreshCommand="{Binding LoadIssues}"
+          IsRefreshing="{Binding IsBusy, Mode=OneWay}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding ShortName}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+	</ContentPage.Content>
+</ContentPage>

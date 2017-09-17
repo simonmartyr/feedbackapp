@@ -8,25 +8,51 @@ using Xamarin.Forms;
 
 namespace Feedback
 {
-  public class MainPageViewModel 
+  public class MainPageViewModel
   {
     public INavigation Navigation { get; set; }
     public IRealmCollection<SprinterConfigs> ConfigsList { get; set; }
     public ICommand ButtonCommand { get; private set; }
+    //public ICommand ViewCommand { get; private set; }
+
     public String Title { get; set; }
+    Realm realm;
 
     public MainPageViewModel()
     {
-      var realm = Realm.GetInstance(); 
+      realm = Realm.GetInstance();
       ConfigsList = (Realms.IRealmCollection<Feedback.Models.SprinterConfigs>)realm.All<SprinterConfigs>();
       ButtonCommand = new Command(AddNew);
-      Title = "Sprinter Configs"; 
+      //ViewCommand = new Command(ViewIssues);
+      Title = "Sprinter Configs";
     }
 
 
-    void AddNew(){
+
+    void AddNew()
+    {
       Navigation.PushAsync(new AddConfig());
     }
-   
+
+    /*
+    SprinterConfigs Selected;
+    public SprinterConfigs ConfigSelected
+    {
+      get
+      {
+        return Selected;
+      }
+      set
+      {
+        Selected = value;
+        if (Selected == null)
+          return;
+
+        ViewCommand.Execute(Selected);
+        ConfigSelected = null;
+      }
+    }
+    */
+
   }
 }

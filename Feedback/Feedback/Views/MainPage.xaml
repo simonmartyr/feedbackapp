@@ -1,22 +1,15 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:Feedback"
-    Title="{Binding Title}"
-             x:Class="Feedback.MainPage">
-    <ContentPage.Content >
-    <StackLayout>
-	<ListView x:Name="configs" ItemsSource="{Binding ConfigsList}">
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <ViewCell>
-                        <Label Text="yo" />
-                </ViewCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
-    <Button Text="Add" 
-            Command="{Binding ButtonCommand}"/>
-    </StackLayout>
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Feedback" Title="{Binding Title}" x:Class="Feedback.MainPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="configs" ItemsSource="{Binding ConfigsList}" IsPullToRefreshEnabled="true" ItemTapped="Handle_ItemTapped" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding AppName}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Add" Command="{Binding ButtonCommand}" />
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
